@@ -12,18 +12,13 @@ def check_board(A):
     nums = {1, 2, 3, 4, 5, 6, 7, 8, 9}
     for i in range(9):
         r = set()
+        c = set()
         for j in range(9):
             r.add(A[i][j])
-        if r != nums:
+            c.add(A[j][i])
+        if r != nums or c != nums:
             return False
-    
-    for j in range(9):
-        c = set()
-        for i in range(9):
-            c.add(A[i][j])
-        if c != nums:
-            return False
-    
+
     for i in range(0, 7, 3):
         for j in range(0, 7, 3):
             s = set()
